@@ -1,12 +1,12 @@
-/* 1. Import the "Hacker" Font */
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 :root {
-  --bg-main: #141d2f;       /* Very dark blue background */
-  --bg-card: #1e2a47;       /* Slightly lighter card */
+  --bg-main: #141d2f;      
+  --bg-card: #1e2a47;       
   --text-main: #ffffff;
-  --text-muted: #d0d6f9;    /* Soft blue-white */
-  --accent: #0079ff;        /* Bright Blue */
+  --text-muted: #d0d6f9;   
+  --accent: #0079ff;        
   --error: #f74646;
   --shadow: rgba(0, 0, 0, 0.2);
 }
@@ -14,7 +14,7 @@
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
-  font-family: 'Space Mono', monospace; /* The coding font */
+  font-family: 'Space Mono', monospace; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,34 +105,29 @@ body.light {
   filter: brightness(1.1);
 }
 
-/* --- The Profile Card (Grid Layout) --- */
 .profile-card {
   background-color: var(--bg-card);
   border-radius: 15px;
   padding: 40px;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
   
-  /* The Secret Weapon: Grid Layout */
   display: grid;
-  grid-template-columns: 150px 1fr; /* Avatar gets 120px, content gets the rest */
+  grid-template-columns: 150px 1fr; 
   gap: 50px;
 }
 
-/* 1. Avatar (Top Left) */
 .avatar {
   width: 117px;
   height: 117px;
   border-radius: 50%;
-  grid-column: 1 / 2; /* First column */
+  grid-column: 1 / 2;
 }
 
-/* 2. Content Wrapper (Right Side) */
 .content-wrapper {
-  grid-column: 2 / 3; /* Second column */
+  grid-column: 2 / 3; 
   width: 75%;
 }
 
-/* Header inside the content wrapper */
 .profile-header {
   display: flex;
   justify-content: space-between;
@@ -159,9 +154,9 @@ body.light {
   font-size: 0.95rem;
 }
 
-/* --- Stats Box --- */
+
 .stats-box {
-  background-color: var(--bg-main); /* Darker background for contrast */
+  background-color: var(--bg-main);
   border-radius: 10px;
   padding: 15px 20px;
   display: flex;
@@ -183,10 +178,9 @@ body.light {
   margin: 0;
 }
 
-/* Mobile Responsive */
 @media (max-width: 600px) {
   .profile-card {
-    grid-template-columns: 1fr; /* Stack everything */
+    grid-template-columns: 1fr; 
     padding: 20px;
     text-align: left;
   }
