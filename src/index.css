@@ -1,0 +1,207 @@
+/* 1. Import the "Hacker" Font */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-main: #141d2f;       /* Very dark blue background */
+  --bg-card: #1e2a47;       /* Slightly lighter card */
+  --text-main: #ffffff;
+  --text-muted: #d0d6f9;    /* Soft blue-white */
+  --accent: #0079ff;        /* Bright Blue */
+  --error: #f74646;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Space Mono', monospace; /* The coding font */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+body.light {
+  --bg-main: #f6f8ff;
+  --bg-card: #fefefe;
+  --text-main: #2b3442;
+  --text-muted: #4b6a9b;
+  --accent: #0079ff;
+  --shadow: rgba(70, 96, 187, 0.2);
+}
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text-main);
+    margin: 0;
+}
+.theme-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.3s;
+}
+.theme-btn:hover {
+    color: var(--text-main);
+}
+
+.devfinder-container {
+  width: 100%;
+  max-width: 730px;
+}
+
+/* --- Search Bar --- */
+.search-box {
+  background-color: var(--bg-card);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1.1rem;
+  width: 100%;
+  margin-left: 20px;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: var(--text-main);
+  opacity: 0.7;
+}
+
+.search-box button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-box button:hover {
+  filter: brightness(1.1);
+}
+
+/* --- The Profile Card (Grid Layout) --- */
+.profile-card {
+  background-color: var(--bg-card);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+  
+  /* The Secret Weapon: Grid Layout */
+  display: grid;
+  grid-template-columns: 150px 1fr; /* Avatar gets 120px, content gets the rest */
+  gap: 50px;
+}
+
+/* 1. Avatar (Top Left) */
+.avatar {
+  width: 117px;
+  height: 117px;
+  border-radius: 50%;
+  grid-column: 1 / 2; /* First column */
+}
+
+/* 2. Content Wrapper (Right Side) */
+.content-wrapper {
+  grid-column: 2 / 3; /* Second column */
+  width: 75%;
+}
+
+/* Header inside the content wrapper */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.github-link {
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 5px;
+  display: block;
+}
+
+.bio {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+/* --- Stats Box --- */
+.stats-box {
+  background-color: var(--bg-main); /* Darker background for contrast */
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .profile-card {
+    grid-template-columns: 1fr; /* Stack everything */
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .avatar {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+  
+  .content-wrapper, .avatar {
+    grid-column: 1 / -1;
+  }
+  
+  .profile-header {
+    flex-direction: column;
+  }
+}
