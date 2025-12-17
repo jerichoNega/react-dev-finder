@@ -7,13 +7,17 @@ function App() {
 
   const [ userData, setUserData ] = useState(null);
   const [ error, setError ] = useState(null);
-  const [ theme, setTheme ] = useState('dark');
+  const [ theme, setTheme ] = useState(() => {
+      const savedTheme = localStorage.getItem('saved-theme');
+      return savedTheme ? savedTheme : 'dark';
+  })
 
   const toggleTheme = () => {
     setTheme((prevTheme) => prevTheme === 'dark' ? 'light' : 'dark')
   };
 
   useEffect(() => {
+    localStorage.setItem('saved-theme', theme)
     document.body.className = theme;
   }, [theme]);
 
