@@ -23,9 +23,11 @@ function App() {
 
 
   const fetchGitHubUser = async (user) => {
+    if(!user) return;
     try{
       setError(null)
     const response = await fetch(`https://api.github.com/users/${user}`);
+      
       if(!response.ok) {
         throw new Error('Error fetching the user data, or the user doesnt exist.')
       }
