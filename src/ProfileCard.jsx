@@ -12,12 +12,10 @@ function ProfileCards({ data }) {
 
   return (
     <div className="profile-card">
-      {/* COLUMN 1: The Image */}
-      {/* FIX: Use <img> not <image> */}
+      
       <img src={avatar_url} alt={`${login}'s avatar`} className="avatar" />
 
-      {/* COLUMN 2: The Content Wrapper */}
-      {/* FIX: We added this div to group all text for the Grid layout */}
+      
       <div className="content-wrapper">
         <div className="profile-header">
           <div className="name-box">
